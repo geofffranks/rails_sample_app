@@ -5,7 +5,7 @@
 #
 # Generated July 17, 2013
 #
-# This configuration file is custom generated for 
+# This configuration file is custom generated for
 
 
 # Here are the settings that are common to all environments
@@ -16,7 +16,7 @@ common: &default_settings
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
   #license_key: '<%= license_key %>'
-  license_key: '<%= JSON.parse(ENV["VCAP_SERVICES"])["newrelic-n/a"].first["credentials"]["licenseKey"] %>'
+  license_key: '<%= JSON.parse(ENV["VCAP_SERVICES"])["newrelic"].first["credentials"]["licenseKey"] %>'
 
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
