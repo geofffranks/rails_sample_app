@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_filter :authenticate,
+  before_action :authenticate,
                 :only => [:index, :edit, :update, :destroy,
                           :followers, :following]
-  before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user,   :only => :destroy
+  before_action :correct_user, :only => [:edit, :update]
+  before_action :admin_user,   :only => :destroy
   
   def index
     @users = User.paginate(:page => params[:page])
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user].permit([:name, :password, :password_confirmation, :email]))
     if @user.save
       sign_in @user
       redirect_to @user, :flash => { :success => "Welcome to the Sample App!" }

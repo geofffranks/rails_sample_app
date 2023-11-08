@@ -1,25 +1,26 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.12'
-gem 'gravatar_image_tag', '1.0.0.pre2'
-gem 'will_paginate', '3.0.pre2'
-gem 'sqlite3', '1.3.4'
-gem "pg", "~> 0.15.1"
-gem "cf-autoconfig", "~> 0.2.1"
-gem 'rails_12factor', group: :production
-ruby '2.1.9'
+gem 'rails', '~> 6.1'
+gem 'gravatar_image_tag'
+gem 'will_paginate'
+gem 'sqlite3'
+gem 'mysql2'
+gem 'pg'
+gem "cf-autoconfig"
+gem 'rails_12factor'
+gem 'thin'
+ruby '~> 3.2'
 
 group :development do
-  gem 'rspec-rails', '2.6.1'
-  gem 'annotate', '2.4.0'
-  gem 'faker', '0.3.1'
+  gem 'rspec-rails'
+  gem 'annotate'
+  gem 'faker'
 end
 
 group :test do
-  gem 'rspec-rails', '2.6.1'
-  gem 'webrat', '0.7.1'
-  gem 'spork', '0.9.0.rc8'
-  gem 'factory_girl_rails', '1.0'
+  gem 'webrat'
+  gem 'spork'
+  gem 'factory_girl_rails'
   # gem 'autotest', '4.4.6'
   # gem 'autotest-rails-pure', '4.1.2'
   # gem 'autotest-fsevent', '0.2.4'
